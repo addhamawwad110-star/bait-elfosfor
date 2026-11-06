@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بيت الفسفور والمأكولات البحرية | أكل بحر يفتح النفس</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A2540;--navy2:#06182b;--gold:#D4A017;--gold2:#f3cf5a;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Cairo',Tahoma,sans-serif;font-size:19px;line-height:1.8;background:var(--navy);color:var(--white)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section{padding:90px 20px}
+.wrap{max-width:1150px;margin:auto}
+h2{font-size:clamp(30px,5vw,46px);font-weight:900;color:var(--gold);text-align:center}
+.sub{text-align:center;opacity:.8;margin-bottom:45px}
+.line{width:90px;height:4px;background:var(--gold);margin:8px auto 14px;border-radius:4px}
+.btn{display:inline-block;padding:14px 34px;border-radius:50px;font-weight:800;font-size:20px;border:2px solid var(--gold);cursor:pointer;font-family:inherit;transition:.3s}
+.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--navy)}
+.gold:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(212,160,23,.45)}
+.ghost{color:var(--gold);background:transparent}
+.ghost:hover{background:var(--gold);color:var(--navy)}
+.rev{opacity:0;transform:translateY(40px);transition:1s}
+.rev.on{opacity:1;transform:none}
+/* NAV */
+nav{position:fixed;top:0;inset-inline:0;z-index:50;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,160,23,.4)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1250px;margin:auto;padding:10px 20px}
+.logo{font-size:22px;font-weight:900;color:var(--gold);line-height:1.3}
+.links{display:flex;gap:6px;list-style:none}
+.links a{padding:6px 12px;border-radius:30px;font-weight:600;font-size:17px;transition:.3s}
+.links a:hover,.links a.act{color:var(--gold)}
+.burger{display:none;background:none;border:0;color:var(--gold);font-size:34px;cursor:pointer}
+/* HERO */
+#home{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding-top:90px;background:linear-gradient(180deg,#134a7c 0%,#0A2540 55%,#04101d 100%)}
+.sea{position:absolute;inset:0;direction:ltr;pointer-events:none;overflow:hidden}
+.ray{position:absolute;top:-10%;width:120px;height:110%;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 70%);transform:rotate(15deg);animation:ray 8s ease-in-out infinite alternate}
+@keyframes ray{from{opacity:.2;transform:rotate(15deg) translateX(0)}to{opacity:.7;transform:rotate(22deg) translateX(40px)}}
+.fish{position:absolute;left:0;width:90px;animation:swim linear infinite}
+@keyframes swim{from{transform:translateX(110vw)}to{transform:translateX(-200px)}}
+.fish svg{animation:bob 2s ease-in-out infinite alternate;width:100%;height:auto}
+@keyframes bob{to{transform:translateY(-14px) rotate(-3deg)}}
+.bub{position:absolute;bottom:-30px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(255,255,255,.12);animation:up linear infinite}
+@keyframes up{to{transform:translateY(-110vh) translateX(30px)}}
+.weed{position:absolute;bottom:0;width:60px;height:200px;transform-origin:bottom;animation:sway 3s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+.wave{position:absolute;top:70px;left:0;width:200%;height:60px;opacity:.25;animation:wv 9s linear infinite}
+@keyframes wv{to{transform:translateX(-50%)}}
+.hero-in{position:relative;z-index:2;padding:20px}
+.hero-in h1{font-size:clamp(56px,12vw,130px);font-weight:900;line-height:1.2;background:linear-gradient(90deg,#b8860b,#fff3b0,#D4A017,#fff3b0,#b8860b);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
+@keyframes shine{to{background-position:-250% 0}}
+.hero-in h1 span{display:block;font-size:.38em;font-weight:800;line-height:1.5}
+.tag{font-size:clamp(22px,4vw,36px);font-weight:700;margin:10px 0 35px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* ABOUT */
+#about{background:var(--navy2)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about img{border-radius:24px;border:3px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.5);aspect-ratio:4/3;object-fit:cover;width:100%}
+.about p{margin-bottom:14px}
+.stats{display:flex;gap:14px;margin-top:20px}
+.stat{flex:1;text-align:center;background:rgba(212,160,23,.1);border:1px solid var(--gold);border-radius:16px;padding:12px 4px}
+.stat b{display:block;font-size:34px;color:var(--gold)}
+/* MENU */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.card{background:linear-gradient(160deg,#0f3358,#0A2540);border:1px solid rgba(212,160,23,.4);border-radius:22px;overflow:hidden;transition:.4s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,.5);border-color:var(--gold)}
+.card img{height:210px;width:100%;object-fit:cover}
+.cb{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cb h3{font-size:26px;color:var(--gold2)}
+.cb p{font-size:17px;opacity:.85;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.price{font-size:28px;font-weight:900;color:var(--gold)}
+.price small{font-size:16px}
+.row .btn{padding:8px 22px;font-size:18px}
+/* OFFERS */
+#offers{background:var(--navy2)}
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:850px;margin:auto}
+.offer{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--navy);border-radius:26px;padding:34px 26px;text-align:center;box-shadow:0 18px 40px rgba(212,160,23,.25)}
+.offer h3{font-size:32px;font-weight:900}
+.offer .pr{font-size:54px;font-weight:900;line-height:1.2}
+.offer ul{list-style:none;margin:12px 0 20px;font-weight:600}
+.offer .btn{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.timer{text-align:center;margin-bottom:35px;font-size:22px}
+.timer b{display:inline-block;background:var(--gold);color:var(--navy);padding:2px 14px;border-radius:12px;margin:0 4px;min-width:62px;font-size:30px}
+/* REVIEWS */
+.slider{max-width:760px;margin:auto;overflow:hidden;border-radius:24px}
+.track{display:flex;transition:transform .7s ease}
+.slide{min-width:100%;padding:38px 30px;text-align:center;background:rgba(212,160,23,.08);border:1px solid var(--gold);border-radius:24px}
+.stars{color:var(--gold);font-size:28px;letter-spacing:4px}
+.slide p{font-size:21px;margin:10px 0}
+.slide b{color:var(--gold2)}
+.ctrl{display:flex;justify-content:center;gap:14px;margin-top:20px}
+.ctrl button{width:48px;height:48px;border-radius:50%;border:2px solid var(--gold);background:none;color:var(--gold);font-size:22px;cursor:pointer}
+.ctrl button:hover{background:var(--gold);color:var(--navy)}
+/* BOOK */
+#book{background:var(--navy2)}
+form{max-width:640px;margin:auto;background:var(--navy);border:2px solid var(--gold);border-radius:26px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column}.full{grid-column:1/-1}
+label{font-weight:700;color:var(--gold2)}
+input,select{font-family:inherit;font-size:19px;padding:12px 14px;border-radius:12px;border:2px solid rgba(255,255,255,.25);background:#0c2d4d;color:#fff;width:100%}
+input:focus,select:focus{outline:none;border-color:var(--gold)}
+.err{color:#ff8a8a;font-size:15px;min-height:22px}
+.ok{display:none;grid-column:1/-1;text-align:center;background:rgba(60,200,120,.15);border:2px solid #3cc878;border-radius:18px;padding:20px;font-size:21px}
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:35px}
+.info div{background:rgba(212,160,23,.08);border-radius:16px;padding:16px 20px;margin-bottom:14px;border-right:5px solid var(--gold)}
+.info b{color:var(--gold)}
+iframe{width:100%;height:100%;min-height:340px;border:3px solid var(--gold);border-radius:22px}
+footer{background:#04101d;text-align:center;padding:26px;border-top:2px solid var(--gold);font-size:16px}
+.fab{position:fixed;z-index:60;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 18px rgba(0,0,0,.5);border:0;cursor:pointer}
+#wa{bottom:20px;left:20px;background:#25D366;color:#fff}
+#up{bottom:90px;left:20px;background:var(--gold);color:var(--navy);display:none;font-weight:900}
+@media(max-width:860px){
+ .logo{font-size:15px;max-width:70%}
+ .burger{display:block}
+ .links{position:absolute;top:100%;inset-inline:0;background:var(--navy2);flex-direction:column;padding:10px 20px;max-height:0;overflow:hidden;opacity:0;transition:.4s}
+ .links.open{max-height:500px;opacity:1}
+ .about,.contact{grid-template-columns:1fr}
+ form{grid-template-columns:1fr;padding:22px}
+ section{padding:70px 16px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="fs" viewBox="0 0 100 50"><ellipse cx="42" cy="25" rx="34" ry="18" fill="currentColor"/><path d="M70 25 L98 6 L98 44Z" fill="currentColor"/><path d="M35 8 Q45 -2 55 10Z" fill="currentColor"/><circle cx="22" cy="21" r="5" fill="#fff"/><circle cx="21" cy="21" r="2.5" fill="#0A2540"/></symbol>
+<symbol id="wd" viewBox="0 0 60 200"><path d="M30 200 C5 150 55 120 30 80 C10 50 40 25 30 0" stroke="currentColor" stroke-width="12" fill="none" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<nav><div class="nav">
+ <a href="#home" class="logo">🐟 بيت الفسفور والمأكولات البحرية</a>
+ <button class="burger" id="burger" aria-label="القائمة">☰</button>
+ <ul class="links" id="links">
+  <li><a href="#home">الرئيسية</a></li><li><a href="#about">من نحن</a></li><li><a href="#menu">المنيو</a></li>
+  <li><a href="#offers">العروض</a></li><li><a href="#reviews">آراء الزباين</a></li><li><a href="#book">احجز</a></li><li><a href="#contact">تواصل معانا</a></li>
+ </ul>
+</div></nav>
+
+<!-- الرئيسية: لو عايز فيديو بدل الخلفية المتحركة، احذف div.sea وحط:
+<video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><source src="video.mp4"></video> -->
+<section id="home">
+ <div class="sea" id="sea">
+  <div class="ray" style="right:10%"></div><div class="ray" style="right:40%;animation-delay:2s"></div><div class="ray" style="right:70%;animation-delay:4s"></div>
+  <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q75 0 150 30 T300 30 T450 30 T600 30 T750 30 T900 30 T1050 30 T1200 30 V60 H0Z" fill="#fff"/></svg>
+ </div>
+ <div class="hero-in">
+  <h1>بيت الفسفور<span>والمأكولات البحرية</span></h1>
+  <div class="tag">أكل بحر يفتح النفس</div>
+  <div class="hero-btns"><a href="#menu" class="btn gold">شوف المنيو</a><a href="#book" class="btn ghost">احجز ترابيزة</a></div>
+ </div>
+</section>
+
+<section id="about"><div class="wrap about">
+ <div class="rev"><img id="aboutImg" alt="مطعم بيت الفسفور والمأكولات البحرية"></div>
+ <div class="rev">
+  <h2 style="text-align:right">من نحن</h2><div class="line" style="margin-right:0"></div>
+  <p>بدأت حكاية "بيت الفسفور والمأكولات البحرية" من حب بسيط للبحر وأكل البحر. من أبو حمص في البحيرة، بنقدم لك سمك طازة كل يوم بييجي لنا مباشرة من الصيادين، ومنه على النار على طول.</p>
+  <p>عندنا شيف متخصص في المأكولات البحرية بيحضّر كل طبق بوصفات أصلية وتتبيلة سرية، في جو عائلي ومريح للعيلة والصحاب.</p>
+  <div class="stats"><div class="stat"><b data-n="15">0</b>سنة خبرة</div><div class="stat"><b data-n="40">0</b>صنف</div><div class="stat"><b data-n="9000">0</b>زبون سعيد</div></div>
+ </div>
+</div></section>
+
+<section id="menu"><div class="wrap">
+ <h2>المنيو</h2><div class="line"></div><p class="sub">أطباق طازة، بتتحضّر لك على الطلب</p>
+ <div class="grid" id="menuGrid"></div>
+</div></section>
+
+<section id="offers"><div class="wrap">
+ <h2>عروض اليوم</h2><div class="line"></div>
+ <div class="timer">العرض ينتهي بعد: <b id="h">00</b>:<b id="m">00</b>:<b id="s">00</b></div>
+ <div class="offers">
+  <div class="offer rev"><h3>عرض العيلة 👨‍👩‍👧‍👦</h3><div class="pr">899 <small style="font-size:22px">جنيه</small></div><ul><li>جمبري + سبيط + بوري مشوي</li><li>شوربة سي فود + سلطات + أرز</li></ul><a class="btn" data-order="عرض العيلة" href="#">اطلب العرض</a></div>
+  <div class="offer rev"><h3>عرض الصحاب 🍻</h3><div class="pr">599 <small style="font-size:22px">جنيه</small></div><ul><li>جمبري + بلطي مشوي</li><li>طاجن سي فود + سلطات</li></ul><a class="btn" data-order="عرض الصحاب" href="#">اطلب العرض</a></div>
+ </div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+ <h2>آراء الزباين</h2><div class="line"></div><p class="sub">كلامهم أصدق من كلامنا</p>
+ <div class="slider"><div class="track" id="track">
+  <div class="slide"><div class="stars">★★★★★</div><p>الجمبري عندهم حاجة تانية! طازة جداً والتتبيلة تجنن، وجينا بالعيلة كلها والخدمة كانت ممتازة.</p><b>أحمد محمود</b></div>
+  <div class="slide"><div class="stars">★★★★★</div><p>أحلى طاجن سي فود أكلته في حياتي، والمكان نضيف وهادي. أكيد راجعين تاني إن شاء الله.</p><b>منى عبد الرحمن</b></div>
+  <div class="slide"><div class="stars">★★★★★</div><p>عرض الصحاب كان ولا أروع، أكل كتير وسعره معقول، والبوري المشوي عليه الطعم.</p><b>محمد السيد</b></div>
+ </div></div>
+ <div class="ctrl"><button id="nx" aria-label="التالي">›</button><button id="pv" aria-label="السابق">‹</button></div>
+</div></section>
+
+<section id="book"><div class="wrap">
+ <h2>احجز ترابيزة</h2><div class="line"></div><p class="sub">املا البيانات وهنكلمك للتأكيد</p>
+ <form id="bf" novalidate>
+  <div class="f full"><label for="nm">الاسم</label><input id="nm" placeholder="اكتب اسمك"><span class="err"></span></div>
+  <div class="f full"><label for="ph">رقم الموبايل</label><input id="ph" type="tel" inputmode="numeric" placeholder="01XXXXXXXXX" maxlength="11"><span class="err"></span></div>
+  <div class="f"><label for="gs">عدد الأفراد</label><select id="gs"><option value="">اختار</option></select><span class="err"></span></div>
+  <div class="f"><label for="dt">التاريخ</label><input id="dt" type="date"><span class="err"></span></div>
+  <div class="f full"><label for="tm">الوقت</label><select id="tm"><option value="">اختار الوقت</option></select><span class="err"></span></div>
+  <button class="btn gold full" type="submit">تأكيد الحجز</button>
+  <div class="ok" id="ok">✅ تم استلام حجزك وهنكلمك للتأكيد<br><a id="wl" class="btn ghost" style="margin-top:12px;font-size:17px" target="_blank" rel="noopener">ابعت التفاصيل على واتساب</a></div>
+ </form>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <h2>تواصل معانا</h2><div class="line"></div><p class="sub">يسعدنا نشوفك</p>
+ <div class="contact">
+  <div class="info">
+   <div><b>📍 العنوان:</b> أبو حمص، البحيرة</div>
+   <div><b>📞 التليفون:</b> <a href="tel:01000000000" style="direction:ltr;display:inline-block">01000000000</a></div>
+   <div><b>🕛 مواعيد العمل:</b> من 12 الظهر لـ 12 بالليل</div>
+   <a class="btn gold" id="wa2" target="_blank" rel="noopener">كلمنا على واتساب</a>
+   <a class="btn ghost" style="margin-top:10px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=أبو+حمص+البحيرة">افتح في الخرائط</a>
+  </div>
+  <iframe title="الخريطة" loading="lazy" src="https://www.google.com/maps?q=أبو+حمص,+البحيرة&output=embed"></iframe>
+ </div>
+</div></section>
+
+<footer>© 2026 بيت الفسفور والمأكولات البحرية — جميع الحقوق محفوظة</footer>
+<a id="wa" class="fab" target="_blank" rel="noopener" aria-label="واتساب">💬</a>
+<button id="up" class="fab" aria-label="للأعلى">↑</button>
+
+<script>
+/* ========= إعدادات سهلة التعديل ========= */
+const WA = "201000000000";           // رقم الواتساب بصيغة دولية بدون +
+/* الأصناف: غيّر الاسم / السعر / الصورة / الوصف من هنا */
+const MENU = [
+ {n:"جمبري",p:450,d:"جمبري جامبو متبّل ومشوي على الفحم مع أرز وسلطات.",i:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&q=70"},
+ {n:"سبيط",p:380,d:"كاليماري مقلي مقرمش أو مشوي بتتبيلة الليمون والثوم.",i:"https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600&q=70"},
+ {n:"بوري مشوي",p:280,d:"بوري طازة مشوي على الفحم بالتتبيلة الحارة والخضار.",i:"https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=70"},
+ {n:"بلطي",p:180,d:"بلطي مقلي ذهبي مقرمش، يتقدم مع الطحينة والعيش.",i:"https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=70"},
+ {n:"شوربة سي فود",p:150,d:"شوربة غنية بالجمبري والكاليماري وفواكه البحر.",i:"https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=70"},
+ {n:"طاجن سي فود",p:420,d:"طاجن فخار بالجمبري والسبيط والسمك في صلصة طماطم.",i:"https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=70"}
+];
+const ABOUT_IMG = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=70";
+/* صورة بديلة بتظهر لو أي صورة ماتحملتش */
+const FB = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#134a7c"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs><rect width="600" height="400" fill="url(#g)"/><text x="300" y="235" font-size="140" text-anchor="middle">🦐</text></svg>');
+const IMG = (s,a) => `<img src="${s}" alt="${a}" loading="lazy" onerror="this.onerror=null;this.src='${FB}'">`;
+const $ = s => document.querySelector(s);
+const wa = t => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+
+/* ========= الخلفية المتحركة ========= */
+const sea = $('#sea'), cols = ['#ff9f43','#feca57','#ff6b6b','#48dbfb','#1dd1a1','#f368e0'];
+for (let i=0;i<9;i++){
+ const f = document.createElement('div'); f.className='fish';
+ f.style.top = (15+Math.random()*60)+'%'; f.style.color = cols[i%cols.length];
+ f.style.width = (50+Math.random()*80)+'px';
+ f.style.animationDuration = (14+Math.random()*16)+'s'; f.style.animationDelay = (-Math.random()*25)+'s';
+ f.innerHTML = '<svg viewBox="0 0 100 50"><use href="#fs"/></svg>'; sea.appendChild(f);
+}
+for (let i=0;i<22;i++){
+ const b = document.createElement('div'); b.className='bub'; const z = 6+Math.random()*20;
+ b.style.cssText = `width:${z}px;height:${z}px;left:${Math.random()*100}%;animation-duration:${6+Math.random()*9}s;animation-delay:${-Math.random()*12}s`;
+ sea.appendChild(b);
+}
+for (let i=0;i<9;i++){
+ const w = document.createElement('div'); w.className='weed';
+ w.style.cssText = `left:${i*12+Math.random()*5}%;height:${110+Math.random()*120}px;color:${i%2?'#1e8f5a':'#2ecc71'};animation-delay:${-Math.random()*3}s`;
+ w.innerHTML = '<svg viewBox="0 0 60 200" width="100%" height="100%" preserveAspectRatio="none"><use href="#wd"/></svg>'; sea.appendChild(w);
+}
+
+/* ========= المنيو والصور ========= */
+$('#aboutImg').outerHTML = IMG(ABOUT_IMG,'مطعم بيت الفسفور والمأكولات البحرية');
+$('#menuGrid').innerHTML = MENU.map(m => `
+ <div class="card rev">${IMG(m.i,m.n)}
+  <div class="cb"><h3>${m.n}</h3><p>${m.d}</p>
+   <div class="row"><span class="price">${m.p} <small>جنيه</small></span>
+   <a href="#" class="btn gold" data-order="${m.n}">اطلب دلوقتي</a></div></div></div>`).join('');
+document.addEventListener('click', e => {
+ const o = e.target.closest('[data-order]'); if(!o) return; e.preventDefault();
+ window.open(wa(`أهلاً بيت الفسفور والمأكولات البحرية، عايز أطلب: ${o.dataset.order}`),'_blank');
+});
+$('#wa').href = wa('أهلاً بيت الفسفور والمأكولات البحرية، عندي استفسار'); $('#wa2').href = $('#wa').href;
+
+/* ========= القائمة والتنقل ========= */
+const links = $('#links');
+$('#burger').onclick = () => links.classList.toggle('open');
+links.addEventListener('click', e => { if(e.target.tagName==='A') links.classList.remove('open'); });
+const secs = [...document.querySelectorAll('section')], as = [...links.querySelectorAll('a')];
+addEventListener('scroll', () => {
+ let cur = secs[0].id; secs.forEach(s => { if (scrollY >= s.offsetTop-140) cur = s.id; });
+ as.forEach(a => a.classList.toggle('act', a.getAttribute('href')==='#'+cur));
+ $('#up').style.display = scrollY>600 ? 'flex' : 'none';
+});
+$('#up').onclick = () => scrollTo({top:0,behavior:'smooth'});
+
+/* ========= ظهور عند السكرول + العدادات ========= */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:.15});
+document.querySelectorAll('.rev').forEach(el => io.observe(el));
+const co = new IntersectionObserver(es => es.forEach(e => { if(!e.isIntersecting) return; co.unobserve(e.target);
+ const t = +e.target.dataset.n; let c = 0; const st = Math.ceil(t/60);
+ const id = setInterval(() => { c = Math.min(t, c+st); e.target.textContent = c.toLocaleString('en')+'+'; if(c>=t) clearInterval(id); }, 25);
+}), {threshold:.6});
+document.querySelectorAll('[data-n]').forEach(el => co.observe(el));
+
+/* ========= العداد التنازلي لنهاية اليوم ========= */
+function tick(){
+ const n = new Date(), e = new Date(n); e.setHours(23,59,59,999);
+ const d = e-n, p = x => String(x).padStart(2,'0');
+ $('#h').textContent = p(Math.floor(d/36e5)); $('#m').textContent = p(Math.floor(d%36e5/6e4)); $('#s').textContent = p(Math.floor(d%6e4/1e3));
+}
+tick(); setInterval(tick,1000);
+
+/* ========= سلايدر الآراء ========= */
+let idx = 0; const N = 3, track = $('#track');
+const go = i => { idx = (i+N)%N; track.style.transform = `translateX(${idx*100}%)`; };
+$('#nx').onclick = () => { go(idx+1); reset(); }; $('#pv').onclick = () => { go(idx-1); reset(); };
+let timer = setInterval(() => go(idx+1), 5000);
+const reset = () => { clearInterval(timer); timer = setInterval(() => go(idx+1), 5000); };
+
+/* ========= فورم الحجز ========= */
+const gs = $('#gs'), tm = $('#tm'), dt = $('#dt');
+for (let i=1;i<=20;i++) gs.add(new Option(i+(i===1?' فرد':' أفراد'), i));
+for (let h=12;h<=23;h++) ['00','30'].forEach(m => tm.add(new Option(`${h>12?h-12:h}:${m} ${h>=12?'م':'ص'}`, `${h}:${m}`)));
+const today = new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().split('T')[0];
+dt.min = today;
+$('#ph').addEventListener('input', e => e.target.value = e.target.value.replace(/\D/g,''));
+$('#bf').addEventListener('submit', e => {
+ e.preventDefault(); let ok = true;
+ const chk = (el, bad, msg) => { el.parentNode.querySelector('.err').textContent = bad ? msg : ''; el.style.borderColor = bad ? '#ff8a8a' : ''; if(bad) ok = false; };
+ const nm = $('#nm'), ph = $('#ph');
+ chk(nm, nm.value.trim().length<3, 'من فضلك اكتب اسمك (3 حروف على الأقل)');
+ chk(ph, !/^01[0125]\d{8}$/.test(ph.value), 'اكتب رقم موبايل مصري صحيح (مثال: 01012345678)');
+ chk(gs, !gs.value, 'اختار عدد الأفراد');
+ chk(dt, !dt.value || dt.value<today, 'اختار تاريخ صحيح (من النهارده فصاعداً)');
+ chk(tm, !tm.value, 'اختار الوقت');
+ if(!ok) return;
+ $('#wl').href = wa(`حجز جديد:\nالاسم: ${nm.value}\nالموبايل: ${ph.value}\nعدد الأفراد: ${gs.value}\nالتاريخ: ${dt.value}\nالوقت: ${tm.options[tm.selectedIndex].text}`);
+ $('#ok').style.display = 'block'; $('#bf').reset(); $('#ok').scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
